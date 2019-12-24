@@ -1,0 +1,18 @@
+{
+    "name": "tuanha/call-api",
+    "description": "dung de call api den apiGateWay",
+    "authors": [
+        {
+            "name": "Hoang Tuan",
+            "email": "tuanha@viralsoft.vn"
+        }
+    ],
+    "license": "tuanha@viralsoft.vn",
+    "require": {},
+    "minimum-stability": "dev",
+    "autoload": {
+        "psr-4": {
+            "TuanHA\\CallAPI\\": "src"
+        }
+    }
+}
