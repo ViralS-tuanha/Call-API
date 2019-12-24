@@ -105,6 +105,95 @@ class BaseAPIServices
         return $response;
     }
 
+    /**
+     * Call API to ApiGateway Service get all
+     *
+     * @param $purpose
+     * @param $page
+     * @param $filter
+     * @param int $paginate
+     * @return string
+     */
+    public function all($purpose, $page, $filter, $paginate = 10)
+    {
+        $queryParams =  [
+            'per_page' => $paginate,
+            'page' => $page,
+        ];
+        $queryParams = array_merge($queryParams, $filter);
+        $response = $this->getDataApi($purpose, 'POST', [], $queryParams, []);
+
+        return $response;
+    }
+
+    /**
+     * Call API to ApiGateway Service create
+     *
+     * @param $purpose
+     * @param $formData
+     * @return string
+     */
+    public function create($purpose, $formData)
+    {
+        $response = $this->getDataApi($purpose, 'POST', $formData, [], []);
+        return $response;
+    }
+
+    /**
+     * Call API to ApiGateway Service show
+     *
+     * @param $purpose
+     * @param $id
+     * @param string $key
+     * @return string
+     */
+    public function show($purpose, $id, $key ="id")
+    {
+        $pathParams = [
+            $key => $id
+        ];
+        $response = $this->getDataApi($purpose, 'POST', [], [], $pathParams);
+
+        return $response;
+    }
+
+    /**
+     * Call API to ApiGateway Service update
+     *
+     * @param $purpose
+     * @param $formData
+     * @param $id
+     * @param string $key
+     * @return string
+     */
+    public function update($purpose, $formData, $id, $key = "id")
+    {
+        $pathParams = [
+            $key => $id
+        ];
+        $response = $this->getDataApi($purpose, 'POST', $formData, [], $pathParams);
+
+        return $response;
+    }
+
+    /**
+     * Call API to ApiGateway Service delete
+     *
+     * @param $purpose
+     * @param $id
+     * @param string $key
+     * @return string
+     */
+    public function delete($purpose, $id, $key = "id")
+    {
+        $pathParams = [
+            $key => $id
+        ];
+        $response = $this->getDataApi($purpose, 'POST', [], [], $pathParams);
+
+        return $response;
+    }
+
 }
 
 
