@@ -114,7 +114,7 @@ class BaseAPIServices
      * @param int $paginate
      * @return string
      */
-    public function all($purpose, $page, $filter, $paginate = 10)
+    public function all($purpose, $page, array $filter, $paginate = 10)
     {
         $queryParams =  [
             'per_page' => $paginate,
@@ -133,7 +133,7 @@ class BaseAPIServices
      * @param $formData
      * @return string
      */
-    public function create($purpose, $formData)
+    public function create($purpose, array $formData)
     {
         $response = $this->getDataApi($purpose, 'POST', $formData, [], []);
         return $response;
@@ -166,7 +166,7 @@ class BaseAPIServices
      * @param string $key
      * @return string
      */
-    public function update($purpose, $formData, $id, $key = "id")
+    public function update($purpose, array $formData, $id, $key = "id")
     {
         $pathParams = [
             $key => $id
