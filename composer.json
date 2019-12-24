@@ -7,7 +7,6 @@
             "email": "tuanha@viralsoft.vn"
         }
     ],
-    "license": "tuanha@viralsoft.vn",
     "require": {
         "php": "^7.2"
     },
